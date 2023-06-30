@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> {{data_page.title}} </title>
+    <link href="{{ url_for( 'static', path='/css/mystyle.css') }}"  rel="stylesheet">
+</head>
+{% set action1="" %}
+
+<style>
+    div.lng_choice { padding:20px; margin: 30; }
+    label {
+            color:#00aa80;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:15px;
+    }
+</style>
+<body>
+<p class="pagename" > {{data_page.title}} </p>
+{% if data_page.action=="choice" %} {% set action1="student/edit" %}
+    <div >
+        <form name="go" method="post" action="{{ action1 }}" enctype="multi-part/form-data">
+            <div class="operation_choice">
+                <label id="lbl-operation1">Student Info :</label>
+                <label >ID:</label><br>
+                <input type="text"  name="std_id" >  <br>
+                <label >Name:</label><br>
+                <input type="text"  name="std_name"  >  <br>
+                <label >Family:</label><br>
+                <input type="text"  name="std_family"  ><br>
+                <label >NickName:</label><br>
+                <input type="text"  name="std_nickname"  ><br>
+                <label >Telephone:</label><br>
+                <input type="number"  name="std_telephone"  ><br>
+                <label >Log in:</label><br>
+                <input type="text"  name="std_login"  ><br>
+                <label >Password:</label><br>
+                <input type="text"  name="std_password" ><br>
+            </div>
+            <input type="submit" class="button" value="Submit">
+            <input type="reset" class="button">
+
+        </form>
+    </div>
+{% endif  %}  <!--<action =choice      -->
+{% if data_page.action=="edit" %} {% set action1="/student/update" %}
+    <div >
+        <form name="go" method="post" action="{{ action1 }}" enctype="multi-part/form-data">
+            <div class="operation_choice">
+                <label id="lbl-operation">Student Info :</label>
+                <label >ID:</label><br>
+                <input type="text"  name="std_id" value="{{data_page.student.id}}" >  <br>
+                <label >Name:</label><br>
+                <input type="text"  name="std_name" value="{{data_page.student.name}}"  >  <br>
+                <label >Family:</label><br>
+                <input type="text"  name="std_family" value="{{data_page.student.family}}" ><br>
+                <label >NickName:</label><br>
+                <input type="text"  name="std_nickname" value="{{data_page.student.nickname}}" ><br>
+                <label >Telephone:</label><br>
+                <input type="number"  name="std_telephone" value="{{data_page.student.telephone}}" ><br>
+                <label >Log in:</label><br>
+                <input type="text"  name="std_login" value="{{data_page.student.login}}" ><br>
+                <label >Password:</label><br>
+                <input type="text"  name="std_password" value="{{data_page.student.password}}" ><br>
+            </div>
+            <input type="submit" class="button" value="Submit">
+            <input type="reset" class="button">
+        </form>
+    </div>
+{% endif %}   <!--action = edit } -->
+
+</body>
+</html>
+
