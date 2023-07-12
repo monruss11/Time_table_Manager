@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> {{data_page.title}} </title>
+    <link href="static/css/mystyle.css"  rel="stylesheet">
+</head>
+<style>
+    div.lng_choice { padding:20px; margin: 30; }
+    label {
+            color:#00aa80;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:15px;
+    }
+
+
+</style>
+<body>
+    <p class="pagename" > {{data_page.title}} </p>
+    <div >
+        <form name="go" method="post" action="student" enctype="multi-part/form-data">
+            <div class="operation_choice">
+                <label id="lbl-operation">Choice a Operation :</label>
+                <select name="operation" id="select-operation">
+                    <option value="">--Please choice a Operation--</option>
+                    <option value="Add Student">Add Student</option>
+                    <option value="Edit Student">Edit Student</option>
+                    <option value="Add Lesson Day">Add Lesson Day</option>
+
+                </select>
+            </div>
+            <input type="submit" class="button" value="Submit">
+            <input type="reset" class="button">
+
+        </form>
+    </div>
+
+</body>
+</html>
+

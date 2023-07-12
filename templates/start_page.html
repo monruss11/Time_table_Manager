@@ -2,7 +2,8 @@
 <html>
 <head>
     <title> {{data_page.title}} </title>
-    <link href="{{ url_for( 'static', path='/css/mystyle.css') }}"  rel="stylesheet">
+
+    <link href="static/css/mystyle.css"  type="text/css" rel="stylesheet">
 </head>
 <style>
     div.lng_choice { padding:20px; margin: 30; }
@@ -10,7 +11,7 @@
 <body>
     <p class="pagename" > {{data_page.title}} </p>
     <div >
-        <form name="go" method="post" action="/student" enctype="multi-part/form-data">
+        <form name="go" method="post" action="/manage" enctype="multi-part/form-data">
 
 <!--            <div> <input type="text" id="uname" name="url_googlesheet" size="100"> </div>-->
             <div class="choice_access">
@@ -19,7 +20,6 @@
                     <option value="">--Please choice your Access--</option>
                     <option value="Student">Student</option>
                     <option value="Mentor">Mentor</option>
-
 <!--                    <option value="Hebrew">Hebrew</option>-->
                 </select>
             </div>
